@@ -12,9 +12,16 @@ class Round {
 
   takeTurn(guess){
     const newTurn = new Turn(guess, this.returnCurrentCard())
+    if(!newTurn.evaluateGuess()){
+      this.incorrectGuesses.push(this.returnCurrentCard().id)
+    }
     this.turns += 1;
     return newTurn.giveFeedback()
+  }
 
+  calculatePercentCorrect(){
+    const correctGuesses = this.turns - this.incorrectGuesses.length;
+    return (correctGuesses / this.turns) * 100
   }
 }
 
