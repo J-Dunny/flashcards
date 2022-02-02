@@ -14,6 +14,7 @@ describe('Turn', function() {
     const turn = new Turn();
     expect(turn).to.be.an.instanceof(Turn);
   });
+
   it('should instantiate with a users guess to the question', function() {
     const turn = new Turn('pug');
     expect(turn.guess).to.equal('pug');
