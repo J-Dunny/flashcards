@@ -11,19 +11,6 @@ class Game {
     this.currentRound = {};
   }
 
-  start(){
-    let cards = []
-    prototypeQuestions.forEach((card, i) => {
-      i = new Card(card.id, card.question, card.answers, card.correctAnswer)
-      cards.push(i)
-    });
-
-    const deck = new Deck(cards);
-    const round = new Round(deck);
-
-    this.currentRound = round;
-  }
-
   printMessage(deck, round) {
     console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
 -----------------------------------------------------------------------`)
@@ -31,6 +18,18 @@ class Game {
 
   printQuestion(round) {
       util.main(round);
+  }
+
+  start(){
+
+    let cards = prototypeQuestions.map(card => new Card(card.id, card.question, card.answers, card.correctAnswer))
+
+    const deck = new Deck(cards);
+    const round = new Round(deck);
+
+    this.currentRound = round;
+    this.printMessage(deck, round);
+    this.printQuestion(round);
   }
 }
 

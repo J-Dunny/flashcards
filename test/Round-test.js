@@ -20,14 +20,9 @@ describe('Round', function() {
     deck = new Deck([card1, card2, card3]);
     round = new Round(deck);
   })
-  // it('should be a function', function() {
-  //   const round = new Round();
-  //   expect(Round).to.be.a('function');
-  // });
-
 
   it('should instantiate with a deck of cards', function() {
-    // console.log(round.deck)
+
     expect(round.deck.cards).to.deep.equal([card1, card2, card3]);
   });
 
@@ -56,15 +51,15 @@ describe('Round', function() {
 
     expect(round.takeTurn('sea otter')).to.equal('correct!');
     expect(round.takeTurn('yo')).to.equal('incorrect!');
-    // expect(round.takeTurn(newTurn))to.to.be.an.instanceof(Turn);
   });
 
   it('The takeTurn method should update the turns count, regardless of whether the guess is correct or incorrect', function() {
 
     round.takeTurn('sea otter')
     round.takeTurn('yo')
+    round.takeTurn('yo')
 
-    expect(round.turns).to.equal(2);
+    expect(round.turns).to.equal(3);
   });
 
   it('In the takeTurn method the next card becomes current card', function() {
@@ -104,4 +99,10 @@ describe('Round', function() {
 
   });
 
+  it("endRound method that prints to the console the round is over with your percentage.", function() {
+
+    round.takeTurn('sea otter')
+    expect(round.endRound()).to.equal(console.log(`** Round over! ** You answered ${round.calculatePercentCorrect()} of the questions correctly!`));
+
+  });
 });

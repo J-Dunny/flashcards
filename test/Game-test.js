@@ -13,7 +13,7 @@ describe('Game', function() {
     expect(game).to.be.an.instanceof(Game);
   });
 
-  it('start() method should put all cards into a Deck', function() {
+  it('start() method should intantiate a Deck', function() {
 
     const game = new Game()
     game.start()
@@ -21,7 +21,7 @@ describe('Game', function() {
     expect(game.currentRound.deck).to.be.an.instanceof(Deck);
   });
 
-  it('start() method should create all cards', function() {
+  it('start() method should create all cards and put cards into the deck', function() {
 
     const game = new Game()
     game.start()
@@ -36,11 +36,10 @@ describe('Game', function() {
 
     game.start()
     game.currentRound.takeTurn('yo')
+    game.currentRound.takeTurn('yo')
+    game.currentRound.takeTurn('yo')
 
     expect(game.currentRound).to.be.an.instanceof(Round);
-    expect(game.currentRound.turns).to.equal(1);
+    expect(game.currentRound.turns).to.equal(3);
   });
-
-
-
 });
