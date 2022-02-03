@@ -27,8 +27,8 @@ describe('Round', function() {
 
 
   it('should instantiate with a deck of cards', function() {
-
-    expect(round.deck).to.deep.equal([card1, card2, card3]);
+    // console.log(round.deck)
+    expect(round.deck.cards).to.deep.equal([card1, card2, card3]);
   });
 
   it('should have a method that returns current card being played', function() {
