@@ -6,11 +6,12 @@ const Deck = require('../src/Deck');
 const Round = require('../src/Round');
 
 describe('Round', function() {
-  let card1 = null;
-  let card2 = null;
-  let card3 = null;
-  let deck = null;
-  let round = null;
+
+  let card1;
+  let card2;
+  let card3;
+  let deck;
+  let round;
 
   beforeEach(function(){
     card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
@@ -47,7 +48,6 @@ describe('Round', function() {
   });
 
   it('should have a method called takeTurn that instantiates a new Turn which gives feedback for both correct and incorrect answers', function() {
-
 
     expect(round.takeTurn('sea otter')).to.equal('correct!');
     expect(round.takeTurn('yo')).to.equal('incorrect!');
