@@ -8,14 +8,14 @@ const Game = require('../src/Game');
 
 describe('Game', function() {
 
-  it('should be an instance of Game', function() {
-    const game = new Game();
+  const game = new Game();
+
+  it('should be an instance of Game', function() {;
     expect(game).to.be.an.instanceof(Game);
   });
 
   it('start() method should intantiate a Deck', function() {
 
-    const game = new Game()
     game.start()
 
     expect(game.currentRound.deck).to.be.an.instanceof(Deck);
@@ -23,7 +23,6 @@ describe('Game', function() {
 
   it('start() method should create all cards and put cards into the deck', function() {
 
-    const game = new Game()
     game.start()
 
     expect(game.currentRound.deck.countCards()).to.equal(30);
@@ -31,8 +30,6 @@ describe('Game', function() {
   });
 
   it('start() should instantiate a Round and keep track of the currentRound', function() {
-
-    const game = new Game()
 
     game.start()
     game.currentRound.takeTurn('yo')

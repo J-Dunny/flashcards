@@ -20,9 +20,13 @@ describe('Turn', function() {
     expect(turn.guess).to.equal('pug');
   });
 
-  it('should also instantiate with a Card object for the current card in play', function() {
+  let card;
 
-    const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter')
+  beforeEach(function(){
+    card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter')
+  })
+
+  it('should also instantiate with a Card object for the current card in play', function() {
 
     const turn = new Turn('pug', card);
 
@@ -31,8 +35,6 @@ describe('Turn', function() {
 
   it('should have a method that returns the guess', function() {
 
-    const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter')
-
     const turn = new Turn('pug', card);
 
     expect(turn.returnGuess()).to.equal('pug');
@@ -40,16 +42,12 @@ describe('Turn', function() {
 
   it('should have a method that returns the Card', function() {
 
-    const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter')
-
     const turn = new Turn('pug', card);
 
     expect(turn.returnCard()).to.equal(card);
   });
 
   it('should have a method that returns a boolean indicating if the user’s guess matches the correct answer on the card', function() {
-
-    const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter')
 
     const turn = new Turn('pug', card);
     const turn2 = new Turn('sea otter', card);
@@ -59,8 +57,6 @@ describe('Turn', function() {
   });
 
   it('should have a method that returns either ‘incorrect!’ or ‘correct!’ based on whether the guess is correct or not', function() {
-
-    const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter')
 
     const turn = new Turn('pug', card);
     const turn2 = new Turn('sea otter', card);

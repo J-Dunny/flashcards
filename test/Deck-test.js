@@ -11,10 +11,17 @@ describe('Deck', function() {
     expect(Deck).to.be.a('function');
   });
 
-  it('should instantiate with an array of cards', function() {
+  let card1;
+  let card2;
+  let card3;
+
+  beforeEach(function(){
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
+  })
+
+  it('should instantiate with an array of cards', function() {
 
     const deck = new Deck([card1, card2, card3]);
 
@@ -22,9 +29,6 @@ describe('Deck', function() {
   });
 
   it('should have a method to know how many Cards are in the deck', function() {
-    const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
-    const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
-    const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
 
     const deck = new Deck([card1, card2, card3]);
 
