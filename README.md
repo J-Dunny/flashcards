@@ -4,14 +4,14 @@
 
 This game of FlashCards will help any new developer brush up on their knowledge by answering multi-choice questions and receiving feedback as they go!
 
-## Test Driven Development
+## Built Using Test Driven Development
 This game was created using Test Driven Development by creating the test files before actually writing the game code itself.  
 
 All of the test files can be seen in the `test` directory in the repo.
 
 If you want to see how the tests work you can run `npm test` in your terminal after completing the setup below.
 
-<img src="./assets/TDD.png" alt="drawing" width="500"/>
+<img src="./assets/tdd.png" alt="drawing" width="500"/>
 
 ## Setup
 
@@ -33,7 +33,7 @@ Running `node index.js` from the root of the project should result in the follow
 ```bash
 node index.js
 ```
---->
+You will see --->
 ```bash
 Your project is running...
 ```
@@ -53,3 +53,8 @@ Once you have answered all of the cards it will give you a percentage of correct
 Report Card: At the end of the game, create a report card that would detail any answers that the user got wrong as well as how many tries each question took.
 
 Timer: At the end of the game, create a report card that would detail any answers that the user got wrong as well as how many tries each question took.
+
+## Contributors / Links
+Jake Dunafon https://github.com/J-Dunny
+
+Repo Link: https://github.com/J-Dunny/flashcards
