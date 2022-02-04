@@ -11,7 +11,7 @@ All of the test files can be seen in the `test` directory in the repo.
 
 If you want to see how the tests work you can run `npm test` in your terminal after completing the setup below.
 
-<img src="./assets/tdd.png" alt="drawing" width="500"/>
+<img src="./assets/tdd2.png" alt="drawing" width="500"/>
 
 ## Setup
 
